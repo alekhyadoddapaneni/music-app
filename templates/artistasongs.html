@@ -1,0 +1,16 @@
+{% include 'opensearchpage.html' %}
+<table align ="center" border="2" width="30%">
+
+    <tr>
+        <th>moviename</th>
+        <th>artist</th>
+        <th>song</th>
+    </tr>
+    {% for x in artsong %}
+        <tr>
+        <th>{{ x.moviename }}</th>
+        <th>{{ x.artist }}</th>
+        <th><a href="{% url 'playsong' %}?n={{ x.song.url }}"> {{ x.song.url }} </a></th>
+        </tr>
+    {% endfor %}
+</table>
